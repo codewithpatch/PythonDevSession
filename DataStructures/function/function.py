@@ -3,7 +3,7 @@ def print_hello_world():
   print("Hello World!")
 
 
-def get_full_name(first_name, middle_name, last_name):
+def get_full_name(first_name: str, middle_name: str, last_name: str) -> str:
   full_name = f"{first_name} {middle_name} {last_name}"
 
   # print(full_name)
@@ -32,6 +32,7 @@ print(print_range())
 
 # How to pass parameters in a function
 chester_full_name = get_full_name("Chester", "Dimaano", "de Alday")
+print(chester_full_name)
 bryan_full_name = get_full_name(
   middle_name="Calderon",
   first_name="Bryan",
