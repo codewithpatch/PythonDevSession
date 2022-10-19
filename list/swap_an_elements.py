@@ -5,6 +5,7 @@ list = [1, 2, 3]
 temp = list[0]
 list[0] = list[2]
 list[2] = temp
+
 print(list)
 
 # Another Solution
