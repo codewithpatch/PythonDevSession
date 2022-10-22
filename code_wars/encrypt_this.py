@@ -1,0 +1,27 @@
+# 6kyu
+# Encrypt this!
+
+# You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+# Your message is a string containing space separated words.
+# You need to encrypt each word in the message using the following rules:
+    # The first letter must be converted to its ASCII code.
+    # The second letter must be switched with the last letter
+# Keepin' it simple: There are no special characters in the input.
+
+# Examples
+# encrypt_this("Hello") == "72olle"
+# encrypt_this("good") == "103doo"
+# encrypt_this("hello world") == "104olle 119drlo"
+
+def encrypt_this(text):
+    ts = text.split()
+    el = []
+    for x in ts:
+        w = list(x)
+        if len(x) > 2:
+            w[1], w[-1] = w[-1], w[1]
+            el.append(str(ord(x[0])) + str(''.join(w)[1:]))
+        else:
+            el.append(str(ord(x[0])) + str(x[1::]))
+    return ' '.join(el)
